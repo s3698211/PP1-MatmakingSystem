@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Collapse } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -35,11 +36,11 @@ const useStyles = makeStyles({
 
 export default function ImageCard({ demand, checked }) {
   const classes = useStyles();
-
+  const history = useHistory();
   return (
     <Collapse
       in={checked}
-      {...(true ? { timeout: 2000 } : {})}
+      {...(true ? { timeout: 1500 } : {})}
       collapsedHeight={50}
     >
       <Card className={classes.root}>
@@ -72,8 +73,14 @@ export default function ImageCard({ demand, checked }) {
           <Button size="small" color="primary">
             Share
           </Button>
-          <Button size="small" color="primary">
-            Learn More
+          <Button
+            onClick={() => {
+              history.push(`/signup/${demand.userType}`);
+            }}
+            size="small"
+            color="primary"
+          >
+            Join Us
           </Button>
         </CardActions>
       </Card>
