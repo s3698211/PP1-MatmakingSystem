@@ -7,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringbootFirstAppApplication {
 
 	public static void main(String[] args) {
-		
-		//ridoy 
-		
 		SpringApplication.run(SpringbootFirstAppApplication.class, args);
 	}
 
