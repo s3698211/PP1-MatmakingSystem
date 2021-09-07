@@ -16,21 +16,6 @@ import "./bootstrap-4.3.1-dist/css/bootstrap.min.css";
 
 const jwtToken = localStorage.getItem("jwtToken");
 function App() {
-  // if (jwtToken) {
-  //   const decoded_jwtToken = jwt_decode(jwtToken);
-  //   setJWTToken(jwtToken);
-  //   store.dispatch({
-  //     type: "SET_CURRENT_USER",
-  //     payload: decoded_jwtToken,
-  //   });
-
-  //   const currentTime = Date.now() / 1000;
-  //   if (decoded_jwtToken.exp < currentTime) {
-  //     //handle log out
-  //     store.dispatch(signout());
-  //     window.location.href = "/";
-  //   }
-  // }
   return (
     <Provider store={store}>
       <Router>

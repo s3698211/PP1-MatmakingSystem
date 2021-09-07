@@ -25,6 +25,9 @@ public class Employer {
 
 	@Column(name = "Pincode")
 	private int locationPincode;
+	
+	@Column(name = "Salary")
+	private String salary;
 
 	@Column(name = "Pay_Type")
 	private String payType;
@@ -43,6 +46,8 @@ public class Employer {
 
 	@Column(name = "Employer_Username")
 	private String employerUsername;
+	
+	
 
 	public Employer()
 	{
@@ -51,7 +56,7 @@ public class Employer {
 
 
 	public Employer(long id, String jobTitle, int locationPincode, String payType, String category, String jobDescription,
-			String jobType, String skills, String employerUsername) {
+			String jobType, String skills, String employerUsername, String salary) {
 		super();
 		this.id = id;
 		this.jobTitle = jobTitle;
@@ -62,7 +67,18 @@ public class Employer {
 		this.jobType = jobType;
 		this.skills = skills;
 		this.employerUsername = employerUsername;
+		this.salary = salary;
 	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
 
 	public long getId() {
 		return id;
