@@ -19,32 +19,59 @@ const JobDetails = ({ post }) => {
       <Form.Label>Localtion</Form.Label>
       <Form.Control value={post.location} name="location" type="text" />
 
-      <Form.Group className="mb-3">
-        <Form.Label>Radios</Form.Label>
+      <div style={{ marginTop: "1em", height: "5em" }}>
+        <Form.Label>Work-type</Form.Label>
+        <fieldset>
+          <Form.Group as={Row} className="mb-3">
+            <Col sm={10}>
+              <Form.Check
+                type="radio"
+                label="Full-Time"
+                name="formHorizontalRadios"
+                id="formHorizontalRadios1"
+              />
+              <Form.Check
+                type="radio"
+                label="Part-time"
+                name="formHorizontalRadios"
+                id="formHorizontalRadios2"
+              />
+            </Col>
+          </Form.Group>
+        </fieldset>
+      </div>
 
-        <Form.Check
-          type="radio"
-          label="first radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios1"
+      <div
+        style={{
+          marginTop: "1em",
+          height: "3em",
+          display: "flex",
+          alignItems: "baseline",
+        }}
+      >
+        <Form.Label style={{}}>Minimum pay:</Form.Label>
+        <Form.Control
+          name="minPay"
+          style={{
+            width: "10em",
+            marginLeft: "0.5em",
+            marginRight: "0.5em",
+            height: "2.2em",
+          }}
         />
-        <Form.Check
-          type="radio"
-          label="second radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios2"
+        <Form.Label style={{}}>Maximum pay:</Form.Label>
+        <Form.Control
+          name="maxPay"
+          style={{
+            width: "10em",
+            marginLeft: "0.5em",
+            marginRight: "0.5em",
+            height: "2.2em",
+          }}
         />
-        <Form.Check
-          type="radio"
-          label="third radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios3"
-        />
-      </Form.Group>
+      </div>
     </Form>
   );
 };
 
 export default JobDetails;
-const annualPay = [];
-const hourlyRate = [];
