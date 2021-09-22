@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Form, Row, Col } from "react-bootstrap";
-
-const JobDetails = ({ post }) => {
+import "./JobPost.css";
+const JobDetails = ({ post, handleChange }) => {
   return (
-    <Form>
+    <React.Fragment>
       <Form.Group controlId="formBasicSelect">
-        <Form.Label>Role Field</Form.Label>
-        <Form.Control as="select">
+        <Form.Label className="formLabel">Role Field</Form.Label>
+        <Form.Control name="category" onChange={handleChange} as="select">
+          <option disabled value="">
+            Select an option
+          </option>
           <option value="Information & Technology">
             Information & Technology
           </option>
@@ -15,33 +18,68 @@ const JobDetails = ({ post }) => {
           <option value="Education">Education</option>
         </Form.Control>
       </Form.Group>
-
-      <Form.Label>Localtion</Form.Label>
-      <Form.Control value={post.location} name="location" type="text" />
-
-      <Form.Group className="mb-3">
-        <Form.Label>Radios</Form.Label>
-
-        <Form.Check
-          type="radio"
-          label="first radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios1"
+      <Form.Label className="formLabel">Job title: </Form.Label>
+      <Form.Control
+        onChange={handleChange}
+        value={post.jobTitle}
+        name="jobTitle"
+        type="text"
+      />
+      <div className="locationSection">
+        <Form.Label className="formLabel">Address: </Form.Label>
+        <Form.Control
+          className="locationInput"
+          value={post.location}
+          name="location"
+          onChange={handleChange}
+          type="text"
         />
-        <Form.Check
-          type="radio"
-          label="second radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios2"
+
+        <Form.Label className="formLabel">Post code:</Form.Label>
+        <Form.Control
+          value={post.locationPincode}
+          name="locationPincode"
+          onChange={handleChange}
+          placeholder="exp: 3000"
+          type="text"
         />
-        <Form.Check
-          type="radio"
-          label="third radio"
-          name="formHorizontalRadios"
-          id="formHorizontalRadios3"
-        />
-      </Form.Group>
-    </Form>
+      </div>
+
+      <div className="paySection">
+        <Form.Group
+          className="mb-3"
+          name="jobType"
+          onChange={handleChange}
+          value={post.jobType}
+        >
+          <Form.Label className="formLabel">Job type</Form.Label>
+
+          <Form.Check
+            type="radio"
+            label="Full-time"
+            value="Full-time"
+            name="jobType"
+            id="formHorizontalRadios1"
+          />
+          <Form.Check
+            type="radio"
+            label="Part-time"
+            value="Part-time"
+            name="jobType"
+            id="formHorizontalRadios2"
+          />
+        </Form.Group>
+      </div>
+      <Form.Label className="formLabel">Salary </Form.Label>
+      <Form.Control
+        style={{ width: "8em" }}
+        onChange={handleChange}
+        className="salary"
+        value={post.salary}
+        name="salary"
+        placeholder="exp: 3000AUD"
+      />
+    </React.Fragment>
   );
 };
 

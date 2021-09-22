@@ -1,5 +1,7 @@
 package com.Programing_Project1_Backend.springboot.springbootfirstapp.model;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -17,13 +19,13 @@ public class User {
 	@Column(name="FirstName")
 	private String firstname;
 
-	@Column(name="UserName")
+	@Column(name="UserName", unique = true)
 	private String username;
 
 	@Column(name="LastName")
 	private String lastname;
 
-	@Column(name="Email")
+	@Column(name="Email", unique = true)
 	private String email;
 
 	@Column(name="Address")
@@ -38,13 +40,36 @@ public class User {
 	@Column(name="Password")
 	private String password;
 
+	@OneToOne(cascade = CascadeType.MERGE, mappedBy = "user")
+	Background background;
+
+	@OneToMany(cascade= CascadeType.ALL, fetch= FetchType.EAGER, mappedBy ="employer", orphanRemoval = true)
+	private List<JobPost>jobPosts = new ArrayList<JobPost>();
+
+	@OneToMany(cascade= CascadeType.ALL, fetch= FetchType.LAZY, mappedBy ="candidate", orphanRemoval = true)
+	private List<Application>applications = new ArrayList<Application>();
+
+
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(	name = "user_roles", 
-	joinColumns = @JoinColumn(name = "user_id"), 
+	@JoinTable(	name = "user_roles",
+	joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 
 	public User() {
+	}
+
+	public User(String username, String firstname, String lastname, String email, String address, String phone,
+				String password, String user_type) {
+		super();
+		this.username=username;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.address = address;
+		this.phone = phone;
+		this.password = password;
+		this.user_type=user_type;
 	}
 
 	public String getFirstname() {
@@ -87,18 +112,7 @@ public class User {
 		this.id = id;
 	}
 
-	public User(String username, String firstname, String lastname, String email, String address, String phone,
-			String password, String user_type) {
-		super();
-		this.username=username;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.address = address;
-		this.phone = phone;
-		this.password = password;
-		this.user_type=user_type;
-	}
+
 
 	public String getUser_type() {
 		return user_type;
@@ -138,5 +152,29 @@ public class User {
 
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
+	}
+
+	public List<JobPost> getJobPosts() {
+		return jobPosts;
+	}
+
+	public void setJobPosts(List<JobPost> jobPosts) {
+		this.jobPosts = jobPosts;
+	}
+
+	public List<Application> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(List<Application> applications) {
+		this.applications = applications;
+	}
+
+	public Background getBackground() {
+		return background;
+	}
+
+	public void setBackground(Background background) {
+		this.background = background;
 	}
 }

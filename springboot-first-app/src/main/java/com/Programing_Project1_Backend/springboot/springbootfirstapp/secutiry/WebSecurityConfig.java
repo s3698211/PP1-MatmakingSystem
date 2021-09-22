@@ -18,8 +18,8 @@ import com.Programing_Project1_Backend.springboot.springbootfirstapp.security.jw
 import com.Programing_Project1_Backend.springboot.springbootfirstapp.security.jwt.AuthTokenFilter;
 import com.Programing_Project1_Backend.springboot.springbootfirstapp.security.services.UserDetailsServiceImpl;
 /*
- * We define the access to http pages. 
- * A h2-console had permitAll access to reach 
+ * We define the access to http pages.
+ * A h2-console had permitAll access to reach
  * out the database
  */
 @Configuration
@@ -58,21 +58,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
+
 		http.headers().frameOptions().disable();
-		
+
 		http.cors().and().csrf().disable()
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-			
+
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-			.authorizeRequests().antMatchers("/api/auth/**").permitAll()
-			.antMatchers("/api/test/**").permitAll()
-			.antMatchers("/").permitAll()
-	        .antMatchers("/h2-console/**").permitAll()
+			.authorizeRequests()
+			.antMatchers("/api/job/user/**").hasAnyRole("ADMIN", "EMPLOYER", "JOB_SEEKER")
+			.antMatchers("/api/job/employer/postjob/**").hasRole("EMPLOYER")
+			.antMatchers("/api/auth/**", "/api/test/**", "/").permitAll()
+
 			.anyRequest().authenticated();
-		
+
+
+
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
-	
-	
+
+
 }

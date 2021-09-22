@@ -1,0 +1,21 @@
+.locationSection {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.locationDetail {
+  display: flex;
+  align-items: baseline;
+}
+
+.formLabel {
+  margin-top: 12px;
+}
+
+.skillButton {
+  margin-top: 2px;
+  width: 10em;
+  font-size: small;
+  border-radius: 20px;
+}

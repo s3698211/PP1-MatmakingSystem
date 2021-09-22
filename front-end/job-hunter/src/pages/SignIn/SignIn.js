@@ -55,6 +55,7 @@ function SignIn() {
     if (security.validToken) {
       alert("Successfull");
       if (userType === "EMPLOYER") history.push("/employer/createPost");
+      if (userType === "JOB_SEEKER") history.push("/jobseeker/dashboard");
     }
   }, [security]);
 
