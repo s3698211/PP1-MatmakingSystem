@@ -1,0 +1,240 @@
+2021/09/26 12:12:07.206704 [INFO] Starting...
+2021/09/26 12:12:07.206744 [INFO] Starting EBPlatform-PlatformEngine
+2021/09/26 12:12:07.206843 [INFO] reading event message file
+2021/09/26 12:12:07.206928 [INFO] no eb envtier info file found, skip loading env tier info.
+2021/09/26 12:12:07.207006 [INFO] Engine received EB command userdata-exec
+
+2021/09/26 12:12:07.275533 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBAutoScalingGroup --region ap-southeast-2
+2021/09/26 12:12:07.920281 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBBeanstalkMetadata --region ap-southeast-2
+2021/09/26 12:12:08.698130 [INFO] This is a workflow controlled instance.
+2021/09/26 12:12:08.698200 [INFO] Engine command: (env-launch)
+
+2021/09/26 12:12:08.703362 [INFO] Executing instruction: SyncClock
+2021/09/26 12:12:08.703371 [INFO] Starting SyncClock
+2021/09/26 12:12:08.703383 [INFO] Running command /bin/sh -c /usr/bin/chronyc tracking
+2021/09/26 12:12:08.716191 [INFO] Reference ID    : A9FEA97B (169.254.169.123)
+Stratum         : 4
+Ref time (UTC)  : Sun Sep 26 12:12:05 2021
+System time     : 0.067530438 seconds fast of NTP time
+Last offset     : +0.000330486 seconds
+RMS offset      : 0.000330486 seconds
+Frequency       : 4.202 ppm slow
+Residual freq   : +73.457 ppm
+Skew            : 8.295 ppm
+Root delay      : 0.000483383 seconds
+Root dispersion : 0.000515318 seconds
+Update interval : 2.0 seconds
+Leap status     : Normal
+
+2021/09/26 12:12:08.716210 [INFO] Running command /bin/sh -c /usr/bin/chronyc -a makestep
+2021/09/26 12:12:08.657599 [INFO] 200 OK
+
+2021/09/26 12:12:08.665206 [INFO] Skipping Configure OS
+2021/09/26 12:12:08.665223 [INFO] Skipping LockGUID
+2021/09/26 12:12:08.665228 [INFO] Skipping GenerateEBBanner
+2021/09/26 12:12:08.665234 [INFO] Skipping Install Process Manager
+2021/09/26 12:12:08.665240 [INFO] Skipping install proxy
+2021/09/26 12:12:08.665245 [INFO] Skipping installhealthd
+2021/09/26 12:12:08.665251 [INFO] Skipping Install Log Streaming Manager
+2021/09/26 12:12:08.665256 [INFO] Skipping install X-Ray
+2021/09/26 12:12:08.665262 [INFO] Skipping install Third Party License
+2021/09/26 12:12:08.665267 [INFO] Skipping install httpd
+2021/09/26 12:12:08.665273 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:08.665277 [INFO] Executing instruction: installSqsd
+2021/09/26 12:12:08.665282 [INFO] This is a web server environment instance, skip install sqsd daemon ...
+2021/09/26 12:12:08.665289 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:08.665296 [INFO] Executing instruction: bootstraphealthd
+2021/09/26 12:12:08.665301 [INFO] this is an enhanced health env ...
+2021/09/26 12:12:08.665310 [INFO] Running command /bin/sh -c id -u apache
+2021/09/26 12:12:08.667319 [INFO] 48
+
+2021/09/26 12:12:08.667334 [INFO] bootstrap healthd....
+2021/09/26 12:12:08.667358 [INFO] Running command /bin/sh -c /usr/bin/id -u healthd || /usr/sbin/useradd --user-group healthd -s /sbin/nologin --create-home
+2021/09/26 12:12:08.943505 [INFO] bootstrap healthd....
+2021/09/26 12:12:08.943531 [INFO] Running command /bin/sh -c /usr/bin/id -u healthd || /usr/sbin/useradd --user-group healthd -s /sbin/nologin --create-home
+2021/09/26 12:12:08.954211 [INFO] 1001
+
+2021/09/26 12:12:08.954491 [INFO] Executing instruction: GetSetupProxyLog
+2021/09/26 12:12:08.954556 [INFO] Skipping Install yum packages
+2021/09/26 12:12:08.954564 [INFO] Skipping Install default nodejs
+2021/09/26 12:12:08.954570 [INFO] Skipping MarkBaked
+2021/09/26 12:12:08.954577 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:08.954581 [INFO] Executing instruction: TuneSystemSettings
+2021/09/26 12:12:08.954585 [INFO] Starting TuneSystemSettings
+2021/09/26 12:12:08.954590 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:08.981433 [INFO] Executing instruction: GetSetupLogRotate
+2021/09/26 12:12:08.981444 [INFO] Initialize LogRotate files and directories
+2021/09/26 12:12:09.109627 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:09.109645 [INFO] Executing instruction: BootstrapCFNHup
+2021/09/26 12:12:09.109649 [INFO] Bootstrap cfn-hup
+2021/09/26 12:12:09.121370 [INFO] Copying file /opt/elasticbeanstalk/config/private/aws-eb-command-handler.conf to /etc/cfn/hooks.d/aws-eb-command-handler.conf
+2021/09/26 12:12:09.132841 [INFO] Executing instruction: StartCFNHup
+2021/09/26 12:12:09.132851 [INFO] Start cfn-hup
+2021/09/26 12:12:09.132871 [INFO] Running command /bin/sh -c systemctl is-active cfn-hup.service
+2021/09/26 12:12:09.142794 [INFO] Running command /bin/sh -c systemctl is-active cfn-hup.service
+2021/09/26 12:12:09.156882 [INFO] Running command /bin/sh -c systemctl show -p PartOf cfn-hup.service
+2021/09/26 12:12:09.199370 [INFO] Running command /bin/sh -c systemctl daemon-reload
+2021/09/26 12:12:09.370323 [INFO] Running command /bin/sh -c systemctl reset-failed
+2021/09/26 12:12:09.380491 [INFO] Running command /bin/sh -c systemctl is-enabled aws-eb.target
+2021/09/26 12:12:09.400740 [INFO] Running command /bin/sh -c systemctl enable aws-eb.target
+2021/09/26 12:12:09.547409 [INFO] Running command /bin/sh -c systemctl start aws-eb.target
+2021/09/26 12:12:09.552204 [INFO] Running command /bin/sh -c systemctl enable cfn-hup.service
+2021/09/26 12:12:09.710777 [INFO] Running command /bin/sh -c systemctl show -p PartOf cfn-hup.service
+2021/09/26 12:12:09.724043 [INFO] Running command /bin/sh -c systemctl is-active cfn-hup.service
+2021/09/26 12:12:09.733071 [INFO] Running command /bin/sh -c systemctl start cfn-hup.service
+2021/09/26 12:12:09.801693 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:09.801709 [INFO] Executing instruction: SetupPublishLogCronjob
+2021/09/26 12:12:09.801713 [INFO] Setup publish logs cron job...
+2021/09/26 12:12:09.801719 [INFO] Copying file /opt/elasticbeanstalk/config/private/logtasks/cron/publishlogs to /etc/cron.d/publishlogs
+2021/09/26 12:12:09.803151 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:09.803159 [INFO] Executing instruction: MarkBootstrapped
+2021/09/26 12:12:09.803163 [INFO] Starting MarkBootstrapped
+2021/09/26 12:12:09.803168 [INFO] Instance has NOT been bootstrapped
+2021/09/26 12:12:09.803220 [INFO] Marked instance as Bootstrapped
+2021/09/26 12:12:09.803226 [INFO] Executing instruction: Save CFN Stack Info
+2021/09/26 12:12:09.803261 [INFO] Starting SwitchCFNStack
+2021/09/26 12:12:09.803266 [INFO] Executing cleanup logic
+2021/09/26 12:12:09.803274 [INFO] Platform Engine finished execution on command: env-launch
+
+2021/09/26 12:12:47.583682 [INFO] Starting...
+2021/09/26 12:12:47.583724 [INFO] Starting EBPlatform-PlatformEngine
+2021/09/26 12:12:47.583739 [INFO] reading event message file
+2021/09/26 12:12:47.583833 [INFO] no eb envtier info file found, skip loading env tier info.
+2021/09/26 12:12:47.583905 [INFO] Engine received EB command cfn-hup-exec
+
+2021/09/26 12:12:47.670466 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBAutoScalingGroup --region ap-southeast-2
+2021/09/26 12:12:47.954953 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBBeanstalkMetadata --region ap-southeast-2
+2021/09/26 12:12:48.234877 [INFO] checking whether command app-deploy is applicable to this instance...
+2021/09/26 12:12:48.234891 [INFO] this command is applicable to the instance, thus instance should execute command
+2021/09/26 12:12:48.234896 [INFO] Engine command: (app-deploy)
+
+2021/09/26 12:12:48.234903 [INFO] Downloading EB Application...
+2021/09/26 12:12:48.234906 [INFO] Region: ap-southeast-2
+2021/09/26 12:12:48.234910 [INFO] envID: e-gpnpmr42yc
+2021/09/26 12:12:48.234914 [INFO] envBucket: elasticbeanstalk-ap-southeast-2-892743736725
+2021/09/26 12:12:48.234918 [INFO] Using manifest file name from command request
+2021/09/26 12:12:48.234931 [INFO] Unable to get version manifest file.
+2021/09/26 12:12:48.234935 [INFO] Downloading latest manifest available.
+2021/09/26 12:12:48.234938 [INFO] Download latest app version manifest
+2021/09/26 12:12:48.235021 [INFO] resources/environments/e-gpnpmr42yc/_runtime/versions/manifest
+2021/09/26 12:12:48.284051 [INFO] latestManifest key *: resources/environments/e-gpnpmr42yc/_runtime/versions/manifest_1632658252329
+
+2021/09/26 12:12:48.284221 [INFO] Downloading: bucket: elasticbeanstalk-ap-southeast-2-892743736725, object: /resources/environments/e-gpnpmr42yc/_runtime/versions/manifest_1632658252329
+2021/09/26 12:12:48.304139 [INFO] Download successful156bytes downloaded
+2021/09/26 12:12:48.304230 [INFO] Trying to read and parse version manifest...
+2021/09/26 12:12:48.304293 [INFO] Downloading: bucket: elasticbeanstalk-ap-southeast-2-892743736725, object: /resources/environments/e-gpnpmr42yc/_runtime/_versions/heart-health-calendar-api/app-b0c5-210926_221043
+2021/09/26 12:12:48.320605 [INFO] Download successful78361bytes downloaded
+2021/09/26 12:12:48.320878 [INFO] Executing instruction: ElectLeader
+2021/09/26 12:12:48.320889 [INFO] Running leader election for instance i-082debd933557aa35...
+2021/09/26 12:12:48.320894 [INFO] Calling the cfn-elect-cmd-leader to elect the command leader.
+2021/09/26 12:12:48.320909 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-elect-cmd-leader --stack arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 --command-name ElasticBeanstalkCommand-AWSEBAutoScalingGroup --invocation-id 9e50c01e-6e68-4ce9-86ff-096d4bd4f655 --listener-id i-082debd933557aa35 --region ap-southeast-2
+2021/09/26 12:12:48.606619 [INFO] Instance is Leader.
+2021/09/26 12:12:48.606662 [INFO] Executing instruction: stopSqsd
+2021/09/26 12:12:48.606680 [INFO] This is a web server environment instance, skip stop sqsd daemon ...
+2021/09/26 12:12:48.606685 [INFO] Executing instruction: PreBuildEbExtension
+2021/09/26 12:12:48.606691 [INFO] Starting executing the config set Infra-EmbeddedPreBuild.
+2021/09/26 12:12:48.606710 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-init -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBAutoScalingGroup --region ap-southeast-2 --configsets Infra-EmbeddedPreBuild
+2021/09/26 12:12:48.920729 [INFO] Finished executing the config set Infra-EmbeddedPreBuild.
+
+2021/09/26 12:12:48.920756 [INFO] Executing instruction: StageApplication
+2021/09/26 12:12:48.920890 [INFO] extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/
+2021/09/26 12:12:48.920907 [INFO] Running command /bin/sh -c /usr/bin/unzip -q -o /opt/elasticbeanstalk/deployment/app_source_bundle -d /var/app/staging/
+2021/09/26 12:12:48.928657 [INFO] finished extracting /opt/elasticbeanstalk/deployment/app_source_bundle to /var/app/staging/ successfully
+2021/09/26 12:12:48.929505 [INFO] Executing instruction: RunAppDeployPreBuildHooks
+2021/09/26 12:12:48.929525 [INFO] The dir .platform/hooks/prebuild/ does not exist in the application. Skipping this step...
+2021/09/26 12:12:48.929531 [INFO] Executing instruction: Install customer specified node.js version
+2021/09/26 12:12:48.929535 [INFO] installing specified nodejs version...
+2021/09/26 12:12:48.929633 [INFO] there is no nodejs version specified in package.json, skip installing specified version of nodejs
+2021/09/26 12:12:48.929647 [INFO] Executing instruction: Use NPM to install dependencies
+2021/09/26 12:12:48.929659 [INFO] use npm to install dependencies
+2021/09/26 12:12:48.929687 [INFO] Running command /bin/sh -c npm config set jobs 1
+2021/09/26 12:12:49.483543 [INFO] Running command /bin/sh -c npm --production install
+2021/09/26 12:12:59.330134 [INFO] 
+> bcrypt@5.0.0 install /var/app/staging/node_modules/bcrypt
+> node-pre-gyp install --fallback-to-build
+
+Failed to execute '/opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/bin/node /opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js configure --fallback-to-build --module=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node --module_name=bcrypt_lib --module_path=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3 --napi_version=8 --node_abi_napi=napi --napi_build_version=3 --node_napi_label=napi-v3' (1)
+
+2021/09/26 12:12:59.330199 [ERROR] An error occurred during execution of command [app-deploy] - [Use NPM to install dependencies]. Stop running the command. Error: Command /bin/sh -c npm --production install failed with error exit status 1. Stderr:node-pre-gyp WARN Using needle for node-pre-gyp https download 
+node-pre-gyp WARN Pre-built binaries not installable for bcrypt@5.0.0 and node@12.22.5 (node-v72 ABI, glibc) (falling back to source compile with node-gyp) 
+node-pre-gyp WARN Hit error EACCES: permission denied, mkdir '/var/app/staging/node_modules/bcrypt/lib' 
+gyp WARN EACCES current user ("healthd") does not have permission to access the dev dir "/root/.cache/node-gyp/12.22.5"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/var/app/staging/node_modules/bcrypt/.node-gyp"
+gyp WARN install got an error, rolling back install
+gyp WARN install got an error, rolling back install
+gyp ERR! configure error 
+gyp ERR! stack Error: EACCES: permission denied, mkdir '/var/app/staging/node_modules/bcrypt/.node-gyp'
+gyp ERR! System Linux 4.14.243-185.433.amzn2.x86_64
+gyp ERR! command "/opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/bin/node" "/opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "configure" "--fallback-to-build" "--module=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" "--module_name=bcrypt_lib" "--module_path=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3" "--napi_version=8" "--node_abi_napi=napi" "--napi_build_version=3" "--node_napi_label=napi-v3"
+gyp ERR! cwd /var/app/staging/node_modules/bcrypt
+gyp ERR! node -v v12.22.5
+gyp ERR! node-gyp -v v5.1.0
+gyp ERR! not ok 
+node-pre-gyp ERR! build error 
+node-pre-gyp ERR! stack Error: Failed to execute '/opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/bin/node /opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js configure --fallback-to-build --module=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node --module_name=bcrypt_lib --module_path=/var/app/staging/node_modules/bcrypt/lib/binding/napi-v3 --napi_version=8 --node_abi_napi=napi --napi_build_version=3 --node_napi_label=napi-v3' (1)
+node-pre-gyp ERR! stack     at ChildProcess.<anonymous> (/var/app/staging/node_modules/node-pre-gyp/lib/util/compile.js:83:29)
+node-pre-gyp ERR! stack     at ChildProcess.emit (events.js:314:20)
+node-pre-gyp ERR! stack     at maybeClose (internal/child_process.js:1022:16)
+node-pre-gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:287:5)
+node-pre-gyp ERR! System Linux 4.14.243-185.433.amzn2.x86_64
+node-pre-gyp ERR! command "/opt/elasticbeanstalk/node-install/node-v12.22.5-linux-x64/bin/node" "/var/app/staging/node_modules/.bin/node-pre-gyp" "install" "--fallback-to-build"
+node-pre-gyp ERR! cwd /var/app/staging/node_modules/bcrypt
+node-pre-gyp ERR! node -v v12.22.5
+node-pre-gyp ERR! node-pre-gyp -v v0.15.0
+node-pre-gyp ERR! not ok 
+npm WARN api@1.0.0 No description
+npm WARN api@1.0.0 No repository field.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.3 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! bcrypt@5.0.0 install: `node-pre-gyp install --fallback-to-build`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the bcrypt@5.0.0 install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2021-09-26T12_12_59_315Z-debug.log
+ 
+
+2021/09/26 12:12:59.330210 [INFO] Executing cleanup logic
+2021/09/26 12:12:59.330328 [INFO] CommandService Response: {"status":"FAILURE","api_version":"1.0","results":[{"status":"FAILURE","msg":"Engine execution has encountered an error.","returncode":1,"events":[{"msg":"Instance deployment: You didn't specify a Node.js version in the 'package.json' file in your source bundle. The deployment didn't install a specific Node.js version.","timestamp":1632658368,"severity":"INFO"},{"msg":"Instance deployment: 'npm' failed to install dependencies that you defined in 'package.json'. For details, see 'eb-engine.log'. The deployment failed.","timestamp":1632658379,"severity":"ERROR"},{"msg":"Instance deployment failed. For details, see 'eb-engine.log'.","timestamp":1632658379,"severity":"ERROR"}]}]}
+
+2021/09/26 12:12:59.330487 [INFO] Platform Engine finished execution on command: app-deploy
+
+2021/09/26 12:15:08.281542 [INFO] Starting...
+2021/09/26 12:15:08.281586 [INFO] Starting EBPlatform-PlatformEngine
+2021/09/26 12:15:08.281602 [INFO] reading event message file
+2021/09/26 12:15:08.281697 [INFO] no eb envtier info file found, skip loading env tier info.
+2021/09/26 12:15:08.281761 [INFO] Engine received EB command cfn-hup-exec
+
+2021/09/26 12:15:08.364642 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBAutoScalingGroup --region ap-southeast-2
+2021/09/26 12:15:08.658625 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBBeanstalkMetadata --region ap-southeast-2
+2021/09/26 12:15:08.965255 [INFO] checking whether command tail-log is applicable to this instance...
+2021/09/26 12:15:08.965271 [INFO] this command is applicable to the instance, thus instance should execute command
+2021/09/26 12:15:08.965275 [INFO] Engine command: (tail-log)
+
+2021/09/26 12:15:08.965327 [INFO] Executing instruction: GetTailLogs
+2021/09/26 12:15:08.965332 [INFO] Tail Logs...
+2021/09/26 12:15:08.965576 [INFO] Running command /bin/sh -c tail -n 100 /var/log/eb-engine.log
+2021/09/26 12:15:09.052266 [INFO] Executing cleanup logic
+2021/09/26 12:15:09.052375 [INFO] CommandService Response: {"status":"SUCCESS","api_version":"1.0","results":[{"status":"SUCCESS","msg":"Engine execution has succeeded.","returncode":0,"events":[{"msg":"Instance deployment completed successfully.","timestamp":1632658509,"severity":"INFO"}]}]}
+
+2021/09/26 12:15:09.052497 [INFO] Platform Engine finished execution on command: tail-log
+
+2021/09/26 12:15:19.065136 [INFO] Starting...
+2021/09/26 12:15:19.065177 [INFO] Starting EBPlatform-PlatformEngine
+2021/09/26 12:15:19.065192 [INFO] reading event message file
+2021/09/26 12:15:19.065288 [INFO] no eb envtier info file found, skip loading env tier info.
+2021/09/26 12:15:19.065354 [INFO] Engine received EB command cfn-hup-exec
+
+2021/09/26 12:15:19.157871 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBAutoScalingGroup --region ap-southeast-2
+2021/09/26 12:15:19.463085 [INFO] Running command /bin/sh -c /opt/aws/bin/cfn-get-metadata -s arn:aws:cloudformation:ap-southeast-2:892743736725:stack/awseb-e-gpnpmr42yc-stack/cb89d7e0-1ec2-11ec-8fdc-02ed6fa4bc10 -r AWSEBBeanstalkMetadata --region ap-southeast-2
+2021/09/26 12:15:19.748303 [INFO] checking whether command bundle-log is applicable to this instance...
+2021/09/26 12:15:19.748317 [INFO] this command is applicable to the instance, thus instance should execute command
+2021/09/26 12:15:19.748321 [INFO] Engine command: (bundle-log)
+
+2021/09/26 12:15:19.748377 [INFO] Executing instruction: GetBundleLogs
+2021/09/26 12:15:19.748383 [INFO] Bundle Logs...

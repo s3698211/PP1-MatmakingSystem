@@ -1,0 +1,14 @@
+2021-09-26 12:12:05,068 [INFO] -----------------------Starting build-----------------------
+2021-09-26 12:12:05,074 [INFO] Running configSets: _OnInstanceBoot
+2021-09-26 12:12:05,077 [INFO] Running configSet _OnInstanceBoot
+2021-09-26 12:12:05,079 [INFO] Running config AWSEBBaseConfig
+2021-09-26 12:12:05,260 [INFO] Command clearbackupfiles succeeded
+2021-09-26 12:12:05,264 [INFO] Running config AWSEBCfnHupEndpointOverride
+2021-09-26 12:12:05,267 [INFO] Command clearbackupfiles succeeded
+2021-09-26 12:12:05,269 [INFO] ConfigSets completed
+2021-09-26 12:12:05,269 [INFO] -----------------------Build complete-----------------------
+2021-09-26 12:12:48,886 [INFO] -----------------------Starting build-----------------------
+2021-09-26 12:12:48,893 [INFO] Running configSets: Infra-EmbeddedPreBuild
+2021-09-26 12:12:48,898 [INFO] Running configSet Infra-EmbeddedPreBuild
+2021-09-26 12:12:48,899 [INFO] ConfigSets completed
+2021-09-26 12:12:48,899 [INFO] -----------------------Build complete-----------------------
